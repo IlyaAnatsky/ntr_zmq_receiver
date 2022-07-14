@@ -54,7 +54,7 @@ private:
     boost::property_tree::ptree m_root_node;
 };
 
-constexpr auto min_udp_port = 50000;
+constexpr auto min_port_val = 5000;
 
 struct SConfigV
 {
@@ -123,8 +123,8 @@ struct SConfigV
             std::cout << "Incorrect: Log.write_hex\n";
             incorrect = true;
         }
-        else if (local_ip == "" || (local_port < min_udp_port) ||
-            remote_ip == "" || (remote_port < min_udp_port))
+        else if (local_ip == "" || (local_port < min_port_val) ||
+            remote_ip == "" || (remote_port < min_port_val))
         {
             std::cout << "Incorrect: local_ip or local_port or remote_ip or remote_port\n";
             incorrect = true;
